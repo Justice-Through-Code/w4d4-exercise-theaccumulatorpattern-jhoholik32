@@ -1,10 +1,10 @@
 
 '''
-    You are given a list of temperature readings in Celsius for a week. Your task is to implement a function that calculates and returns the average temperature for the week. To achieve this, you will use the accumulator pattern to accumulate the sum of temperatures and then calculate the average.
+    # You are given a list of temperature readings in Celsius for a week. Your task is to implement a function that calculates and returns the average temperature for the week. To achieve this, you will use the accumulator pattern to accumulate the sum of temperatures and then calculate the average.
 
-    Input
+    # Input
 
-    A list temperatures containing n floating-point numbers representing the temperature readings for the week.
+    # A list temperatures containing n floating-point numbers representing the temperature readings for the week.
     (1 <= n <= 7, -20 <= temperatures[i] <= 40)
     
     Input Example
@@ -12,26 +12,32 @@
 
     Output
 
-    A single floating-point number representing the calculated average temperature.
-    Example Output
-    22.357142857142858
+    # A single floating-point number representing the calculated average temperature.
+    # Example Output
+    # 22.357142857142858
 
 '''
+
 
 from typing import List
 
 def calculate_average_temperature(temperatures: List[float]) -> float:
      # 1.1 TODO: # Initialize an accumulator variable to keep track of the sum of temperatures.
-   
+    accu = 0
     
     # 1.2 TODO:# Iterate through the `temperatures` list, updating the accumulator with the current temperature.
-
+    for temp in temperatures[1:]:
+        accu += temp
+        
     
     # 1.3 TODO: # Calculate and return the average temperature using the accumulated sum and the total number of readings.
-
+    for temp in temperatures:
+        average_temp = (accu + temp) /len(temperatures)
+        return average_temp
+    
 
     
     # 1.3 TODO: return the average temperature
-    
+    # return average_temp
 
-#calculate_average_temperature()
+calculate_average_temperature(temperatures = [20.5, 22.0, 18.5, 25.5, 26.0, 23.5, 19.0])

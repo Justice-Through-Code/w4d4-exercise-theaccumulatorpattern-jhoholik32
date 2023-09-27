@@ -32,7 +32,7 @@ def calculate_average_temperature(temperatures: List[float]) -> float:
     
     # 1.3 TODO: # Calculate and return the average temperature using the accumulated sum and the total number of readings.
     for temp in temperatures:
-        average_temp = sum(temperatures) / len(temperatures)
+        average_temp = (accu + temp) /len(temperatures)
         return average_temp
     
 
